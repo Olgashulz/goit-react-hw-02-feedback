@@ -10,10 +10,27 @@ class Feedback extends Component {
   addFeedback = event => {
     const value = event.target.textContent.toLowerCase();
     this.setState(prevState => ({
-      ...prevState,
+      // ...prevState,
       [value]: prevState[value] + 1,
     }));
+    // this.countTotalFeedback();
   };
+
+  countTotalFeedback() {
+    // console.log(Object.values(this.state))
+    // console.log(Object.values(this.state).reduce((acc, val) => { return acc + val; }, 0))
+    return Object.values(this.state).reduce((acc, val) => {
+      return acc + val;
+    }, 0);
+  }
+
+  countPositiveFeedbackPercentage() {
+    console.log(this.state.good);
+    console.log(this.state.bad);
+    console.log(this.state.good + this.state.bad);
+    const goodAndBad = this.state.good + this.state.bad;
+    return Math.round((100 * this.state.good) / goodAndBad);
+  }
 
   render() {
     return (
@@ -32,17 +49,25 @@ class Feedback extends Component {
         </div>
         <div className="Statistics">
           <ul className="list">
-            <li>
-              Good
+            <li className="item">
+              Good:
               <span>{this.state.good}</span>
             </li>
-            <li>
-              Neutral
+            <li className="item">
+              Neutral:
               <span>{this.state.neutral}</span>
             </li>
-            <li>
-              Bad
+            <li className="item">
+              Bad:
               <span>{this.state.bad}</span>
+            </li>
+            <li className="item">
+              Total:
+              <span>{this.countTotalFeedback()}</span>
+            </li>
+            <li className="item">
+              Positive feedback:
+              <span>{this.countPositiveFeedbackPercentage()}%</span>
             </li>
           </ul>
         </div>
