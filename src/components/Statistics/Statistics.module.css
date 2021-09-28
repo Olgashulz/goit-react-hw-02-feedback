@@ -1,0 +1,21 @@
+.statistics {
+  padding-top: 100px;
+  width: 550px;
+  margin: auto;
+  text-align: start;
+}
+
+.title {
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1.2px;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.item {
+  font-family: 'Roboto', sans-serif;
+  /* letter-spacing: 1.2px; */
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 7px;
+}

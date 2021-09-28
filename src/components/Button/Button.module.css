@@ -1,0 +1,60 @@
+.button {
+  /* text-decoration: none;
+  text-align: center;
+  padding: 11px 26px;
+  border: none;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  font: 10px 'Lucida Console', Monaco, monospace;
+  font-weight: bold;
+  color: #000000;
+  background: #ffffff; */
+  background-color: transparent;
+  color: #fff;
+  font-family: 'Birthstone', cursive;
+  letter-spacing: 1.5px;
+  font-size: 40px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  border-bottom: 1px solid #328a8f;
+  line-height: 0.9em;
+
+  /* -webkit-box-shadow: 2px 1px 2px #bababa, inset -1px -1px 6px #ffffff;
+  -moz-box-shadow: 2px 1px 2px #bababa, inset -1px -1px 6px #ffffff;
+  box-shadow: 2px 1px 2px #bababa, inset -1px -1px 6px #ffffff; */
+}
+
+.button:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.button::before {
+  content: '';
+  display: block;
+  background: url('../../picture/smile.png') no-repeat;
+  width: 40px;
+  height: 40px;
+  float: left;
+  margin: 0 6px 0 0;
+  position: absolute;
+  top: 5px;
+  right: 105px;
+  /* width: 50px;
+  height: 50px;
+
+  background-image: url('../../call-3613071.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+
+.button:hover {
+  border-bottom: 1px solid white;
+  transition: border-bottom 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.button:active {
+  border-bottom: 1px solid white;
+}
