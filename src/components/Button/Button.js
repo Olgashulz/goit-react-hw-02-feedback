@@ -5,7 +5,7 @@ import styles from './Button.module.css';
 export default function Button({ textBtn, onLeaveFeedback }) {
   return (
     <button
-      className={styles.button}
+      className={`${styles.button} ${styles[textBtn]}`}
       type="button"
       onClick={event => onLeaveFeedback(event)}
     >

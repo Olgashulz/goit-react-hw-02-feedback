@@ -1,5 +1,5 @@
 .statistics {
-  padding-top: 100px;
+  padding-top: 90px;
   width: 550px;
   margin: auto;
   text-align: start;
@@ -14,8 +14,19 @@
 
 .item {
   font-family: 'Roboto', sans-serif;
-  /* letter-spacing: 1.2px; */
   font-size: 20px;
   font-weight: 400;
   margin-bottom: 7px;
+}
+
+.value {
+  padding-left: 7px;
+}
+
+.item:last-child {
+  font-size: 50px;
+  font-weight: 400;
+  font-family: 'Birthstone', cursive;
+  letter-spacing: 1.5px;
+  color: #fff;
 }

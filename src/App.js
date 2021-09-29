@@ -1,4 +1,3 @@
-// import Feedback from './components/feedback/feedback';
 import React, { Component } from 'react';
 import Section from './components/Section';
 import Statistics from './components/Statistics';

@@ -15,25 +15,28 @@ export default function Statistics({
       <ul className={styles.list}>
         <li className={styles.item}>
           Good:
-          <span>{good}</span>
+          <span className={styles.value}>{good}</span>
         </li>
         <li className={styles.item}>
           Neutral:
-          <span>{neutral}</span>
+          <span className={styles.value}>{neutral}</span>
         </li>
         <li className={styles.item}>
           Bad:
-          <span>{bad}</span>
+          <span className={styles.value}>{bad}</span>
         </li>
         <li className={styles.item}>
           Total:
-          <span>{total}</span>
+          <span className={styles.value}>{total}</span>
         </li>
         <li className={styles.item}>
           Positive feedback:
-          <span>{positivePercentage}%</span>
+          <span className={styles.value}>
+            {isNaN(positivePercentage) ? 0 : positivePercentage}%
+          </span>
         </li>
       </ul>
+      <p className={styles.massage}></p>
     </div>
   );
 }
