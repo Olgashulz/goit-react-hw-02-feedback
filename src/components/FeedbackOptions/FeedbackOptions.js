@@ -11,7 +11,8 @@ export default function FeedbackOptions({ options, onLeaveFeedback }) {
         <Button
           key={textBtn}
           textBtn={textBtn}
-          onLeaveFeedback={onLeaveFeedback}
+          // onLeaveFeedback={onLeaveFeedback}
+          onLeaveFeedback={() => onLeaveFeedback(textBtn)}
         />
       ))}
     </div>

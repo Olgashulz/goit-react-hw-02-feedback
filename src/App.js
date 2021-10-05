@@ -10,8 +10,16 @@ class App extends Component {
     bad: 0,
   };
 
-  addFeedback = event => {
-    const value = event.target.textContent.toLowerCase();
+  /// вариант если из feedbackOptions приходит ивент, но правильнее и проще если сразу приходит название кнопки
+  // addFeedback = event => {
+  //   const value = event.target.textContent.toLowerCase();
+  //   this.setState(prevState => ({
+  //     [value]: prevState[value] + 1,
+  //   }));
+  // };
+  /////////////////////////////////
+
+  addFeedback = value => {
     this.setState(prevState => ({
       [value]: prevState[value] + 1,
     }));
@@ -31,22 +39,15 @@ class App extends Component {
 
   render() {
     const { good, bad, neutral } = this.state;
-    const isVisible = Object.values(this.state).reduce(
-      (acc, el) => (el ? acc + 1 : acc),
-      0,
-    )
-      ? true
-      : false;
-    // console.log(isVisible)
 
     return (
-      <Section title={'Please leave feedback'}>
+      <Section title="Please leave feedback">
         <FeedbackOptions
           options={Object.keys(this.state)}
           onLeaveFeedback={this.addFeedback}
         />
 
-        {isVisible && (
+        {this.countTotalFeedback() > 0 && (
           <Statistics
             good={good}
             neutral={neutral}
